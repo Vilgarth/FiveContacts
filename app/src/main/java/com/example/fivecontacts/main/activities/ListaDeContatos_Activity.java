@@ -191,13 +191,15 @@ public class ListaDeContatos_Activity extends AppCompatActivity implements UIEdu
                 @Override
                 public void onItemClick(AdapterView<?> adapterView, View view, int i, long l) {
 
-                    if (checarPermissaoPhone_SMD(contatos.get(i).getNumero())) {
-
-                        Uri uri = Uri.parse(contatos.get(i).getNumero());
-                      //   Intent itLigar = new Intent(Intent.ACTION_DIAL, uri);
-                        Intent itLigar = new Intent(Intent.ACTION_CALL, uri);
-                        startActivity(itLigar);
+                    Uri uri = Uri.parse(contatos.get(i).getNumero());
+                    Intent itLigar;
+                    if (checarPermissaoPhone_SMD(contatos.get(i).getNumero())) { ;
+                        itLigar = new Intent(Intent.ACTION_CALL, uri);
                     }
+                    else{
+                        itLigar = new Intent(Intent.ACTION_DIAL, uri);
+                    }
+                    startActivity(itLigar);
 
 
                 }
