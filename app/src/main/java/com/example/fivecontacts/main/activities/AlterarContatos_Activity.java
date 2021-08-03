@@ -283,7 +283,7 @@ public class AlterarContatos_Activity extends AppCompatActivity implements Botto
 
             for(int i =0; i < contatos.size(); i++) {
                 Map<String,Object> listItemMap = new HashMap<String,Object>();
-                listItemMap.put("imageId", R.drawable.ic_action_ligar_list);
+                listItemMap.put("imageId", R.drawable.ic_action_remove);
                 listItemMap.put("contato", contatosNomes[i]);
                 listItemMap.put("abrevs",contatosAbrevs[i]);
                 itemDataList.add(listItemMap);
